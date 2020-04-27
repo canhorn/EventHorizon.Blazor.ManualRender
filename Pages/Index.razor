@@ -1,0 +1,30 @@
+﻿@page "/"
+
+<h1>Build a Component</h1>
+
+<button type="button" @onclick="RenderComponent">
+    Create Game Agent
+</button>
+
+@CustomRender
+
+@code {
+    private RenderFragment CustomRender { get; set; }
+    
+    // This is our "dynamically" created component.
+    private RenderFragment CreateComponent() => builder =>
+    {
+        // This Component is built right in Code
+        builder.OpenComponent(0, typeof(Components.GameAgentDetails));
+        // Here we add some attributes to the opened GameAgentDetails Component
+        builder.AddAttribute(1, "Name", "Steve");
+        builder.AddAttribute(2, "Role", "NPC");
+        builder.AddAttribute(3, "Function", "Being Awesome");
+        builder.CloseComponent();
+    };    
+    
+    private void RenderComponent()
+    {
+        CustomRender = CreateComponent();
+    }
+}
