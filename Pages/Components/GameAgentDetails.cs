@@ -20,7 +20,7 @@ namespace EventHorizon.Blazor.ManualRender.Pages.Components
             // We open a div
             builder.OpenElement(seq, "div");
             builder.AddAttribute(++seq, "class", "agent-details__name");
-            // Then add some conetnt to that the div, in this case the passed in Name parameter.
+            // Then add some content to that the div, in this case the passed in Name parameter.
             builder.AddContent(++seq, Name);
             // We then close the currently open element.
             builder.CloseElement();

@@ -1,12 +1,20 @@
 ﻿@page "/"
+@using EventHorizon.Blazor.ManualRender.Pages.Components
 
 <h1>Build a Component</h1>
 
+<div>Displayed</div>
+<div>
+    <GameAgentDetails Name="Jeff" Role="Tree" Function="Being Pretty" />
+</div>
+<hr />
 <button type="button" @onclick="RenderComponent">
     Create Game Agent
 </button>
-
-@CustomRender
+<div>Built in Code</div>
+<div>
+    @CustomRender
+</div>
 
 @code {
     private RenderFragment CustomRender { get; set; }
