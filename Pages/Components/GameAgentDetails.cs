@@ -19,6 +19,7 @@ namespace EventHorizon.Blazor.ManualRender.Pages.Components
             var seq = 0;
             // We open a div
             builder.OpenElement(seq, "div");
+            // Adding a arbitrary class attribute with a custom value.
             builder.AddAttribute(++seq, "class", "agent-details__name");
             // Then add some content to that the div, in this case the passed in Name parameter.
             builder.AddContent(++seq, Name);
